@@ -1,0 +1,13 @@
+numpy
+pandas
+openpyxl
+xlrd
+matplotlib
+tqdm
+seaborn
+plotly
+nbformat
+streamlit
+streamlit-lottie
+requests
+db-sqlite3

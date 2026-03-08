@@ -1,0 +1,8 @@
+[theme]
+base = "light"
+primaryColor = "#000926"
+backgroundColor = "#D6E6F3"
+secondaryBackgroundColor = "#D6E6F3"
+textColor = "#000926"
+font = "times"
+baseFontSize = 18
