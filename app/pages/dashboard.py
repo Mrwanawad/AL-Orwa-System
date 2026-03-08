@@ -80,9 +80,9 @@ st.markdown(  '<h1 style = "font-family:times new roman; font-size:65px;text-ali
 
 
 # SideBar
-code = st.sidebar.multiselect( 'Code:',options = df['الكود'].unique(),default = df['الكود'].unique(), help= 'Conductor Code' )
+code = st.sidebar.multiselect( 'Code:',options = list(df['الكود'].unique()),default = list(df['الكود'].unique()), help= 'Conductor Code' )
 in_stock = st.sidebar.multiselect( 'Stock', options = ['غير متاح','متاح'], default= ['غير متاح','متاح'], help= 'متاح او غير متاح' )
-material = st.sidebar.multiselect( 'Material', options = df['المادة الخام'].unique(), default=df['المادة الخام'].unique(), help= 'المونيوم او نحاس' )
+material = st.sidebar.multiselect( 'Material', options = list(df['المادة الخام'].unique()), default=list(df['المادة الخام'].unique()), help= 'المونيوم او نحاس' )
 
 download_df = st.sidebar.button( 'Download the dataset ?' )     # Download dataset button
 
@@ -92,7 +92,7 @@ with st.sidebar :  st_lottie( anim, height=300, speed=3, loop=True, width= 150 )
 @st.cache_data
 def filter_data( df: pd.DataFrame, code: str, in_stock: str, material: str ) -> pd.DataFrame :
     code = code if len( code ) != 0 else df['الكود'].unique()
-    return df.query( 'الكود == @code and متاح == @in_stock and `المادة الخام`== @material' )
+    return df.query( 'الكود == @code and متاح == @in_stock and `المادة الخام` == @material' )
 
 df = filter_data( df, code, in_stock, material )
 #st.dataframe(  df )
