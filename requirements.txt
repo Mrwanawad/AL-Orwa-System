@@ -7,7 +7,7 @@ tqdm
 seaborn
 plotly
 nbformat
-streamlit
+streamlit[extras]
 streamlit-lottie
 requests
 db-sqlite3
