@@ -89,7 +89,6 @@ download_df = st.sidebar.button( 'Download the dataset ?' )     # Download datas
 with st.sidebar :  st_lottie( anim, height=300, speed=3, loop=True, width= 150 )
 
 
-@st.cache_data
 def filter_data( df: pd.DataFrame, code: str, in_stock: str, material: str ) -> pd.DataFrame :
     code = code if len( code ) != 0 else df['الكود'].unique()
     return df.query( 'الكود == @code and متاح == @in_stock and `المادة الخام` == @material' )
